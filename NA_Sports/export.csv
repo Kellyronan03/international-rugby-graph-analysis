@@ -1,0 +1,10 @@
+﻿City,Destination,Cost
+"""Kansas_City""","""Central""",7.0
+"""Central""","""Nashville""",7.0
+"""Kansas_City""","""NFL""",3.0
+"""NFL""","""Denver""",3.0
+"""NFL""","""Washington_DC""",3.0
+"""Washington_DC""","""600k-700k""",4.0
+"""600k-700k""","""Memphis""",3.0
+"""NFL""","""Las_Vegas""",3.0
+"""NFL""","""Boston""",6.0

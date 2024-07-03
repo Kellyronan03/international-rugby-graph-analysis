@@ -1,0 +1,152 @@
+﻿City,Team,League,Division,Titles,Totals
+Atlanta,Atlanta Braves,MLB,NL East,4,
+Baltimore,Baltimore Orioles,MLB,AL East,3,
+Boston,Boston Red Sox,MLB,AL East,9,
+Chicago,Chicago Cubs,MLB,NL Central,3,
+Chicago,Chicago White Sox,MLB,AL Central,3,20
+Cincinnati,Cincinnati Reds,MLB,NL Central,5,
+Cleveland,Cleveland Guardians,MLB,AL Central,2,3
+Dallas,Texas Rangers,MLB,AL West,0,7
+Denver,Colorado Rockies,MLB,NL West,0,
+Detroit,Detroit Tigers,MLB,AL Central,4,18
+Houston,Houston Astros,MLB,AL West,2,
+Kansas City,Kansas City Royals,MLB,AL Central,2,
+Los Angeles,Los Angeles Angles,MLB,AL West,1,
+Los Angeles,Los Angeles Dodgers,MLB,NL West,7,
+Miami,Miami Marlins,MLB,NL East,2,7
+Milwaukee,Milwaukee Brewers,MLB,NL Central,0,
+Minneapolis,Minnesota Twins,MLB,AL Central,3,
+New York,New York Mets,MLB,NL East,2,
+New York,New York Yankees,MLB,AL East,27,45
+Oakland,Oakland Athletics,MLB,AL West,9,9
+Philadelphia,Philadelphia Phillies,MLB,NL East,2,
+Phoenix,Arizona Diamondbacks,MLB,NL West,1,
+Pittsburgh,Pittsburgh Pirates,MLB,NL Central,5,
+San Diego,San Diego Padres,MLB,NL West,0,0
+San Francisco,San Francisco Giants,MLB,NL West,8,20
+Seattle,Seattle Mariners,MLB,AL West,0,
+St. Louis,St. Louis Cardinals,MLB,NL Central,11,12
+Tampa,Tampa Bay Rays,MLB,AL East,0,5
+Toronto,Toronto Blue Jays,MLB,AL East,2,
+Washington DC,Washington Nationals,MLB,NL East,1,
+Atlanta,Atlanta United FC,MLS,Eastern Conference,1,6
+Austin,Austin FC,MLS,Western Conference,0,0
+Boston,New England Revolution,MLS,Eastern Conference,0,38
+Chicago,Chicago Fire FC,MLS,Eastern Conference,1,
+Cincinnati,FC Cincinnati,MLS,Eastern Conference,0,5
+Columbus,Columbus Crew,MLS,Eastern Conference,2,2
+Dallas,FC Dallas,MLS,Western Conference,0,
+Denver,Colorado Rapids,MLS,Western Conference,1,
+Houston,Houston Dynamo FC,MLS,Western Conference,2,
+Kansas City,Sporting Kansas City,MLS,Western Conference,2,7
+Los Angeles,LA Galaxy,MLS,Western Conference,5,
+Los Angeles,Los Angeles FC,MLS,Western Conference,1,
+Miami,Inter Miami CF,MLS,Eastern Conference,0,
+Montreal,Montréal CF,MLS,Eastern Conference,0,
+Nashville,Nashville SC,MLS,Eastern Conference,0,
+New York,New York City FC,MLS,Eastern Conference,1,
+New York,New York Red Bulls,MLS,Eastern Conference,0,
+Orlando,Orlando City SC,MLS,Eastern Conference,0,
+Philadelphia,Philadelphia Union,MLS,Eastern Conference,0,8
+Portland,Portland Timbers,MLS,Western Conference,1,
+Saint Paul,Minnesota United FC,MLS,Western Conference,0,
+Salt Lake City,Real Salt Lake,MLS,Western Conference,1,
+San Jose,San Jose Earthquakes,MLS,Western Conference,2,
+Seattle,Seattle Sounders FC,MLS,Western Conference,2,3
+Toronto,Toronto FC,MLS,Eastern Conference,1,
+Vancover,Vancouver Whitecaps FC,MLS,Western Conference,0,0
+Washington DC,D.C. United,MLS,Eastern Conference,4,
+Atlanta,Atlanta Hawks,NBA,East,1,
+Boston,Boston Celtics,NBA,East,17,
+Charlotte,Charlotte Hornets,NBA,East,0,0
+Chicago,Chicago Bulls,NBA,East,6,
+Cleveland,Cleveland Cavaliers,NBA,East,1,
+Dallas,Dallas Mavericks,NBA,West,1,
+Denver,Denver Nuggets,NBA,West,1,8
+Detroit,Detroit Pistons,NBA,East,3,
+Houston,Houston Rockets,NBA,West,2,
+Indianapolis,Indiana Pacers,NBA,East,0,
+Los Angeles,Los Angeles Clippers,NBA,West,0,
+Los Angeles,Los Angeles Lakers,NBA,West,17,
+Memphis,Memphis Grizzlies,NBA,West,0,0
+Miami,Miami Heat,NBA,East,3,
+Milwaukee,Milwaukee Bucks,NBA,East,2,2
+Minneapolis,Minnesota Timberwolves,NBA,West,0,
+New Orleans,New Orleans Pelicans,NBA,West,0,
+New York,Brooklyn Nets,NBA,East,0,
+New York,New York Knicks,NBA,East,2,
+Oklahoma,Oklahoma City Thunder,NBA,West,1,1
+Orlando,Orlando Magic,NBA,East,0,0
+Philadelphia,Philadelphia 76ers,NBA,East,3,
+Phoenix,Phoenix Suns,NBA,West,0,1
+Portland,Portland Trail Blazers,NBA,West,1,2
+Sacramento,Sacremento Kings,NBA,West,1,1
+Salt Lake City,Utah Jazz,NBA,West,0,1
+San Antonio,San Antonio Spurs,NBA,West,5,5
+San Francisco,Golden State Warriors,NBA,West,7,
+Toronto,Toronto Raptors,NBA,East,1,17
+Washington DC,Washington Wizards,NBA,East,1,10
+Atlanta,Atlanta Falcons,NFL,NFC South,0,
+Baltimore,Baltimore Ravens,NFL,AFC North,2,5
+Boston,New England Patriots,NFL,AFC East,6,
+Buffalo,Buffalo Bills,NFL,AFC East,0,
+Charlotte,Carolina Panthers,NFL,NFC South,0,
+Chicago,Chicago Bears,NFL,NFC North,1,
+Cincinnati,Cincinnati Bengals,NFL,AFC North,0,
+Cleveland,Cleveland Browns,NFL,AFC North,0,
+Dallas,Dallas Cowboys,NFL,NFC East,5,
+Denver,Denver Broncos,NFL,AFC West,3,
+Detroit,Detroit Lions,NFL,NFC North,0,
+Green Bay,Green Bay Packers,NFL,NFC North,4,4
+Houston,Houston Texans,NFL,AFC South,0,6
+Indianapolis,Indianapolis Colts,NFL,AFC South,2,2
+Jacksonville,Jacksonville Jaguars,NFL,AFC South,0,0
+Kansas City,Kansas City Cheifs,NFL,AFC West,3,
+Las Vegas,Las Vegas Raiders,NFL,AFC West,3,
+Los Angeles,Los Angeles Chargers,NFL,AFC West,0,
+Los Angeles,Los Angeles Rams,NFL,NFC West,2,35
+Miami,Miami Dolphins,NFL,AFC East,2,
+Minneapolis,Minnesota Vikings,NFL,NFC North,0,3
+Nashville,Tennessee Titans,NFL,AFC South,0,0
+New Orleans,New Orleans Saints,NFL,NFC South,1,1
+New York,New York Giants,NFL,NFC East,4,
+New York,New York Jets,NFL,AFC East,1,
+Philadelphia,Philadelphia Eagles,NFL,NFC East,1,
+Phoenix,Arizona Cardinals,NFL,NFC West,0,
+Pittsburgh,Pittsburgh Steelers,NFL,AFC North,6,16
+San Francisco,San Francisco 49ers,NFL,NFC West,5,
+Seattle,Seattle Seahawks,NFL,NFC West,1,
+Tampa,Tampa Bay Buccaneers,NFL,NFC South,2,
+Washington DC,Washington Football Team,NFL,NFC East,3,
+Anaheim,Anaheim Ducks,NHL,Pacific,1,1
+Boston,Boston Bruins,NHL,Atlantic,6,
+Buffalo,Buffalo Sabres,NHL,Atlantic,0,0
+Calgary,Calgary Flames,NHL,Pacific,1,1
+Chicago,Chicago Blackhawks,NHL,Central,6,
+Columbus,Columbus Blue Jackets,NHL,Metropolitan,0,
+Dallas,Dallas Stars,NHL,Central,1,
+Denver,Colorado Avalanche,NHL,Central,3,
+Detroit,Detroit Red Wings,NHL,Atlantic,11,
+Edmonton,Edmonton Oilers,NHL,Pacific,5,5
+Las Vegas,Vegas Golden Knights,NHL,Pacific,1,4
+Los Angeles,Los Angeles Kings,NHL,Pacific,2,
+Miami,Florida Panthers,NHL,Atlantic,0,
+Montreal,Montreal Canadiens,NHL,Atlantic,24,24
+Nashville,Nashville Predators,NHL,Central,0,
+New York,New York Islanders,NHL,Metropolitan,4,
+New York,New York Rangers,NHL,Metropolitan,4,
+Newark,New Jersey Devils,NHL,Metropolitan,3,3
+Ottawa,Ottawa Senators,NHL,Atlantic,0,0
+Philadelphia,Philadeliphia Flyers,NHL,Metropolitan,2,
+Phoenix,Arizona Coyotes,NHL,Central,0,
+Pittsburgh,Pittsburgh Penguins,NHL,Metropolitan,5,
+Raleigh,Carolina Hurricanes,NHL,Metropolitan,1,1
+Saint Paul,Minnesota Wild,NHL,Central,0,0
+San Jose,San Jose Sharks,NHL,Pacific,0,2
+Seattle,Seattle Kraken,NHL,Pacific,0,
+St. Louis,St. Louis Blues,NHL,Central,1,
+Tampa,Tampa Bay Lightning,NHL,Atlantic,3,
+Toronto,Toronto Maple Leafs,NHL,Atlantic,13,
+Vancover,Vancouver Canucks,NHL,Pacific,0,
+Washington DC,Washington Capitals,NHL,Metropolitan,1,
+Winnipeg,Winnipeg Jets,NHL,Central,0,0

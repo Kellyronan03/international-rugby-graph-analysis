@@ -1,0 +1,335 @@
+Lab4 p1
+
+one directional
+
+CREATE
+(alice:Student {name: "Alice"}),
+(brian:Student {name: "Brian"}),
+(david:Student {name: "David"}),
+(alice)-[:FRIEND]->(brian),
+(brian)-[:FRIEND]->(david)
+
+CREATE
+(tim:Student {name: "Tim"}),
+(anna:Student {name: "Anna"}),
+(aisling:Student {name: "Aisling"}),
+(tim)-[:FRIEND]->(anna),
+(anna)-[:FRIEND]->(aisling)
+CREATE
+(john:Student {name: "John"}),
+(annie:Student {name: "Anna"}),
+(susan:Student {name: "Susan"}),
+(laura:Student {name: "Laura"}),
+(john)-[:FRIEND]->(anna),
+(john)-[:FRIEND]->(annie),
+(john)-[:FRIEND]->(susan),
+(laura)-[:FRIEND]->(susan)
+
+bidirectional
+
+CREATE
+(alice:Student {name: "Alice"}),
+(brian:Student {name: "Brian"}),
+(david:Student {name: "David"}),
+(alice)-[:FRIEND]->(brian),
+(brian)-[:FRIEND]->(david),
+(brian)-[:FRIEND]->(alice),
+(david)-[:FRIEND]->(brian)
+
+(repeat for resT)
+CREATE
+(tim:Student {name: "Tim"}),
+(anna:Student {name: "Anna"}),
+(aisling:Student {name: "Aisling"}),
+(tim)-[:FRIEND]->(anna),
+(anna)-[:FRIEND]->(aisling),
+(anna)-[:FRIEND]->(tim),
+(aisling)-[:FRIEND]->(anna)
+CREATE
+(john:Student {name: "John"}),
+(annie:Student {name: "Anna"}),
+(susan:Student {name: "Susan"}),
+(laura:Student {name: "Laura"}),
+(john)-[:FRIEND]->(anna),
+(john)-[:FRIEND]->(annie),
+(john)-[:FRIEND]->(susan),
+(laura)-[:FRIEND]->(susan),
+(anna)-[:FRIEND]->(john),
+(annie)-[:FRIEND]->(john),
+(susan)-[:FRIEND]->(john),
+(susan)-[:FRIEND]->(laura)
+
+foaf
+MATCH (student:Student {name: "Tim"})-[r1:FRIEND]-()-[r2:FRIEND]-(friend_of_a_friend)
+RETURN distinct friend_of_a_friend.name AS Tims_friends_mates
+
+lab4 p2
+
+match (director)-[:DIRECTED]-(:Movie)
+return director.name
+
+match (writer)-[:WROTE]-(:Movie)
+return writer.name
+
+match (a)-[:ACTED_IN]-(:Movie)
+where a.born > 1965
+return distinct a.name
+
+match (n)
+where ID(n) = 0
+return n
+
+match (n)
+return n, ID(n) order by ID(n) desc 
+limit 1
+
+match (actors)-[:ACTED_IN]-()-[:DIRECTED]-(:Person {name: "Nora Ephron"})
+return actors
+OR
+MATCH (n)-[:ACTED_IN]->(movie)<-[:DIRECTED]-(m) 
+WHERE m.name="Nora Ephron"
+RETURN n
+
+MATCH (n)-[r:ACTED_IN]->(movie)
+RETURN n.name, count(r) order by count(r) desc
+limit 1
+
+-----------------------------------------------------------------------------------
+Lab5 q1
+
+match (n:Person)-[r]-(m:Movie) 
+return n.name, type(r), m.title order by n.name
+
+n/a
+
+simple
+MATCH (n:Person) 
+RETURN n ORDER BY n.born LIMIT 1
+OR
+match (n:Person)-[:ACTED_IN]-()
+return n.name, (2023 - n.born) as age order by age desc
+
+Lab5 q2
+
+match (n:Person)-[r]-(m:Movie)
+return m.title, count(r) order by count(r) desc
+
+match (n:Person)-[r:DIRECTED]-(m:Movie {title: "Apollo 13"})
+return n.name, count(n)
+
+match (n:Person)-[r]-()
+with n, count(distinct type(r)) as typecount
+where typecount > 1
+return n.name, typecount
+
+-----------------------------------------------------------------------------------
+Lab6 p1 q1
+
+match (n:Person)
+set n.qualification = "none"
+return n
+
+match (n:Person)-[r:ACTED_IN]-(m:Movie {title: "Charlie Wilson's War"})
+set n.qualification = "Diploma in Acting Studies"
+return n
+
+match (m:Movie)
+set m.rating = "none"
+return m
+
+match (m:Movie)
+set m.rating = 5
+return m
+
+Lab6 p1 q2
+
+CREATE (p:Movie {
+  title: "Prometheus",
+  tagline: "The search for our beginning could lead to our end.",
+  released: 2012,
+  rating: 5
+})
+return p
+
+Match (m:Movie{title:"Prometheus"})
+MERGE(d:Person{name:"Ridley Scott", born:"1937", qualification: "none"})
+MERGE(a1:Person{name:"Noomi Rapace",born:"1979", qualification: "none"})
+MERGE(a2:Person{name:"Michael Fassbender",born:"1977", qualification: "none"})
+MERGE(a3:Person{name:"Charlize Theron",born:"1975", qualification: "none"})
+MERGE(a4:Person{name:"Idris Elba",born:"1972", qualification: "none"})
+CREATE
+(d)-[:DIRECTED]->(m),
+(a1)-[:ACTED_IN{roles:"Elizabeth Shaw"}]->(m),
+(a2)-[:ACTED_IN{roles:"David"}]->(m),
+(a3)-[:ACTED_IN{roles:"Meredith Vickers"}]->(m),
+(a4)-[:ACTED_IN{roles:"Janek"}]->(m)
+
+## merge makes sure it is not duplicating another node
+
+Lab2 p2
+
+High degree centrality in a graph means that a node is directly connected to many other nodes.
+
+Low degree centrality means that a node is connected to relatively few other nodes in the graph.
+
+Closeness centrality measures how close a node is to all other nodes in the graph. 
+It quantifies how quickly a node can reach all other nodes in the network.  
+
+Harmonic centrality is another measure of node centrality. 
+It differs from traditional closeness centrality by considering the harmonic mean 
+of the distances to all other nodes in the graph. 
+It gives higher weight to nodes that are closer to more distant nodes, 
+making it more robust against disconnected subgraphs. 
+
+
+top 10 closeness
+
+CALL gds.graph.project('myGraph', {
+    NodeLabel1: {
+      label: 'Movie'
+    },
+    NodeLabel2: {
+      label: 'Person'
+    }
+  }, {
+    REL_TYPE1: {
+      type: 'ACTED_IN',
+      orientation: 'UNDIRECTED'
+    },
+    REL_TYPE2: {
+      type: 'DIRECTED',
+      orientation: 'UNDIRECTED'
+    },
+    REL_TYPE3: {
+      type: 'PRODUCED',
+      orientation: 'UNDIRECTED'
+    },
+    REL_TYPE4: {
+      type: 'WROTE',
+      orientation: 'UNDIRECTED'
+    },
+    REL_TYPE5: {
+      type: 'FOLLOWS',
+      orientation: 'UNDIRECTED'
+    },
+    REL_TYPE6: {
+      type: 'REVIEWED',
+      orientation: 'UNDIRECTED'
+    }
+  });
+
+CALL gds.closeness.stream('myGraph')
+YIELD nodeId, score
+RETURN ID(gds.util.asNode(nodeId)) AS id, gds.util.asNode(nodeId).name, gds.util.asNode(nodeId).title, score
+ORDER BY score DESC
+limit 10
+
+
+In the context of a closeness centrality score, a node with a score of 1.0 indicates that it is 
+the most central node in the graph in terms of how close it is to all other nodes. In your case, 
+the node named "Prometheus" has a closeness centrality score of 1.0, which means that it is the 
+most central node in your graph.
+
+
+
+-----------------------------------------------------------------------------------
+Mock exam
+
+match (n:Character {name: "Drogo"})-[r:INTERACTS1]-(b)
+return count(distinct b)
+OR
+match (n:Character {name: "Drogo"})-[r:INTERACTS1]-(b)
+where (n)-[r]-(b)
+return count(distinct b)
+19
+
+match (n:Character {name: "Robert-Baratheon"})-[r:INTERACTS1]-(m:Character {name: "Drogo"})
+return *
+yes
+
+match (n:Character {name: "Robert-Baratheon"})-[r:INTERACTS1]-(b)
+where b.name contains "Stark"
+return distinct b.name
+"Eddard-Stark"
+"Lyanna-Stark"
+"Brandon-Stark"
+"Arya-Stark"
+"Robb-Stark"
+"Benjen-Stark"
+"Bran-Stark"
+"Catelyn-Stark"
+"Sansa-Stark"
+
+top 10 most int
+match (n:Character)-[r:INTERACTS1]-()
+return n.name, count(r) order by count(r) desc
+limit 10
+"Eddard-Stark"	66
+"Robert-Baratheon"	50
+"Tyrion-Lannister"	46
+"Catelyn-Stark"	43
+"Jon-Snow"	37
+"Robb-Stark"	35
+"Sansa-Stark"	35
+"Bran-Stark"	32
+"Cersei-Lannister"	30
+"Joffrey-Baratheon"	30
+
+top 10 heavy weighted
+match (n:Character)-[r:INTERACTS1]-(b:Character)
+return n.name, r.weight, b.name order by r.weight desc
+limit 10
+"Eddard-Stark"	291	"Robert-Baratheon"
+"Robert-Baratheon"	291	"Eddard-Stark"
+"Bran-Stark"	112	"Robb-Stark"
+"Robb-Stark"	112	"Bran-Stark"
+"Arya-Stark"	104	"Sansa-Stark"
+"Sansa-Stark"	104	"Arya-Stark"
+"Drogo"	101	"Daenerys-Targaryen"
+"Daenerys-Targaryen"	101	"Drogo"
+"Sansa-Stark"	87	"Joffrey-Baratheon"
+"Joffrey-Baratheon"	87	"Sansa-Stark"
+
+match (n:Character)-[r:INTERACTS2]-(b)
+with n, count(r) as rcount
+where rcount > 50
+return n.name, rcount
+"Tyrion-Lannister"	53
+
+match (n:Character)-[r:INTERACTS2]-(b)
+where b.name contains "Targaryen"
+return n.name, count(r) order by count(r) desc
+limit 1
+"Robert-Baratheon"	4
+
+MATCH (startNode:Character {name: "Arya-Stark"})
+MATCH (endNode:Character {name: "Daenerys-Targaryen"})
+MATCH path = shortestPath((startNode)-[*]-(endNode))
+RETURN path
+Arya-Stark -> Eddard-Stark -> Daenerys-Targaryen
+
+MATCH (c:Character)
+WHERE c.name contains "Stark"
+SET c.gender = 'male'
+then 
+MATCH (c:Character)
+WHERE c.name IN ['Arya-Stark', 'Catelyn-Stark', 'Lyanna-Stark', 'Sansa-Stark', 'Torrhen-Stark']
+SET c.gender = 'female'
+
+MATCH (a:Character)-[r]-(b:Character)
+where a.name contains "Stark" and a.gender = "female" and b.name contains "Lannister"
+WITH a, COUNT(r) AS numInteractions
+RETURN SUM(numInteractions)
+38
+then
+MATCH (a:Character)-[r]-(b:Character)
+where a.name contains "Stark" and a.gender = "male" and b.name contains "Lannister"
+WITH a, COUNT(r) AS numInteractions
+RETURN SUM(numInteractions)
+30
+female more
+
+match (n:Character)
+where n.name contains "Night"
+return n
+no
